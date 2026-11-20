@@ -30,7 +30,7 @@ Guidance for AI agents working in this repo. Humans: see [README.md](README.md).
 
 ## Known issues
 
-- `src/index.js` imports `./decodeURI`, which is not in the repo, and `xrp-account-listener-browserify`, which is not in `package.json`.
+- `src/index.js` and the committed `build/index.js` (the package `main`) both require `./decodeURI`, which is not in the repo, so `require('xrp-app-lib')` from a clone fails until that file is restored. They also import `xrp-account-listener-browserify`, which is not in `package.json`.
 - `test/wallets.json` holds wallet secrets that are in git history. Do not print, copy or reuse them.
 
 ## Rules

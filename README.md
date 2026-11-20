@@ -10,7 +10,7 @@ A small JavaScript library for creating and importing XRP wallets, reading balan
 
     npm install --save xrp-app-lib
 
-The package entry point is `build/index.js`, which is committed to the repo and also produced by `npm run build`.
+The package entry point is `build/index.js`, which is committed to the repo and also produced by `npm run build`. As committed, it requires a missing `./decodeURI` module, so loading it from a clone of this repo fails (see [docs/STATUS.md](docs/STATUS.md)).
 
 ## Usage
 

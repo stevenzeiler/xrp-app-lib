@@ -10,7 +10,7 @@ Last reviewed: 2026-11-20 (github-audit pass 02, documentation only; no code was
 
 ## What's broken or unknown
 
-- `src/index.js` imports `./decodeURI`, which is missing from the repo, so loading from `src/` will likely fail. **(inference)**
+- `src/index.js` and the committed `build/index.js` (the package `main`) both require `./decodeURI`, and neither `src/decodeURI.js` nor `build/decodeURI.js` is in the repo, so loading the package from a clone fails. Whether the published npm tarball included the file is not checked.
 - `xrp-account-listener-browserify` is imported but not listed in `package.json`.
 - Gulp 3 and `gulp-6to5` are unlikely to run on a current Node.js.
 - Payments use the old `ripple-lib` 0.9.4 `Remote` API against `s1.ripple.com`; the Ripple network and server have changed since.
